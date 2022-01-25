@@ -1,0 +1,457 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #070707;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Layout principal de la pagina */
+
+.layout{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+.head{
+    grid-area: header;
+    background-color: #aaaa;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
+.head__menu{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.head__menu__element{
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.head__menu__element__anchor{
+    text-decoration: none;
+    font-size: calc(.3em + 1vw);
+    padding: 15px;
+    margin: 0px 10px;
+    border-bottom: 4px solid rgb(177, 59, 59);
+    color: #000;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.head__menu__element__anchor:hover{
+    padding: 13px 15px;
+    border-bottom: 5px solid rgb(177, 59, 59);
+    background-color: rgba(170, 170, 170, 0.507);
+    box-shadow: 0px 0px 50px 5px #aaa;
+}
+
+.contenedor{
+    grid-area: main;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px;
+}
+
+
+.contenedor__anchor{
+    color: #fff;
+}
+.contenedor__anchor:hover{
+    text-shadow: 0px 1px 1px;
+}
+
+.contenedor__anchor:active{
+    color: #bbb;
+    text-shadow: 0px 1px 1px;
+}
+
+.content__welcome{
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px;
+}
+
+.content__welcome--image{
+    background-size: cover;
+    box-shadow: 0px 0px 20px 10px #000003;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.content__welcome_imagediv{
+    text-align: center;
+    width: 80%;
+}
+
+.content__welcome--titulo{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Contenedores generales */
+
+.contenedorh{
+    margin: 120px;
+    width: 70%;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.contenedorh--interno{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.contenedorh__divisor{
+    width: 50%;
+    height: 90%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.contenedorh__titulo{
+    text-align: center;
+    margin: 5px;
+    font-size: 1.5em;
+}
+
+.contenedorh__parrafo{
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenedorh__imagen{
+    width: 90%;
+    padding: 20px;
+}
+
+.contenedorv{
+    margin: 120px;
+    width: 70%;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contenedorv--interno{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contenedorv__divisor{
+    width: 90%;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.contenedorv__titulo{
+    text-align:center;
+    margin: 5px;
+    font-size: 1.5em;
+}
+
+.contenedorv__parrafo{
+    padding: 20px;
+    list-style-type: none;
+}
+
+.contenedorv__imagen{
+    width: 100%;
+}
+
+.foot{
+    grid-area: footer;
+    width: 100%;
+    background-color: #aaaa;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.foot__menu{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 15px 10px;
+}
+
+.foot__menu__elemento{
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 1em;
+}
+
+.foot__menu__elemento__anchor{
+    padding: 10px 10px;
+    border-radius: 15px;
+    color: #000;
+    text-decoration: none;
+}
+
+.foot__menu__elemento__anchor:hover{
+    padding: 10px 10px;
+    background-color: rgba(170, 170, 170, 0.507);
+    box-shadow: 0px 0px 50px 5px #aaa;
+    transition: 0.2s;
+}
+
+.foot__rigths{
+    color: #000;
+    padding: 5px;
+}
+
+/* Propiedades especiales */
+/* Aqui irian los colores de los contenedores, los tamaños, el color de las letras, los bordes, contenedores especiales... */
+
+/* Para mantener display flex en modo row en media queries */
+
+.contenedor__selector_personajes{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+/* Para mantener el orden de parrafo e imagenes en media queries */
+
+.orden_primero{
+    order: 0;
+}
+
+.orden_segundo{
+    order: 0;
+}
+
+/* Para centrar imagenes dentro de un div */
+
+.contiene_imagen{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Propiedades para listas */
+
+.contenedorv__lista{
+    display: inline-block;
+    list-style-type: none;
+    margin: 10px;
+}
+
+/* Propiedades para tamaños de imagenes */
+
+.contenedor__imagen--dentro{
+    width: 100%;
+}
+
+.contenedor__imagen--dentro2{
+    height: 208px;
+}
+
+.contenedor__imagen--dentro3{
+    width: 55%;
+}
+
+/* Propiedades para color */
+
+.contenedor__color--transp{
+    background-color: #49494920;
+    border-radius: 30px;
+}
+
+.imagen--nivelado{
+    box-shadow: 0px 0px 20px 10px #000003;
+}
+
+/* Media Queries */
+
+/* Media para celulares */
+@media screen and (min-width: 320px) and (max-width:768px){
+
+    body{
+        font-size: 12px;
+    }
+
+    .head{
+        height: 60px;
+    }
+
+    .head__menu{
+        padding: 0;
+    }
+
+    .head__menu__element__anchor{
+        font-size: calc(.1em + 2vw);
+        padding: 15px 3px;
+        margin: 0px 5px;
+    }
+
+    .head__menu__element__anchor:hover{
+        padding: 15px 3px;
+        border-bottom: 5px solid rgb(177, 59, 59);
+        background-color: rgba(170, 170, 170, 0.507);
+        box-shadow: 0px 0px 50px 5px #aaa;
+    }
+
+    .content__welcome{
+        width: 70%;
+    }
+
+    .content__welcome_imagediv{
+        width: 90%;
+    }
+
+    .main{
+        margin: 5px;
+    }
+
+    .contenedorh{
+        width: 90%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 70px;
+        padding: 15px;
+    }
+
+    .contenedorv{
+        width: 90%;
+        margin: 70px;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .contenedorh__divisor{
+        width: 90%;
+    }
+
+    .contenedorh--interno{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .contenedorv__parrafo{
+        padding: 5px;
+    }
+
+    .contenedorv__titulo{
+        padding: 10px;
+    }
+
+    .contenedorh__parrafo{
+        padding: 5px;
+    }
+    
+    .contenedorh__titulo{
+        padding: 10px
+    }
+
+    .contenedorv--interno{
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .contenedor__imagen--dentro{
+        width: 100%;
+    }
+
+    .foot__menu__elemento{
+        font-size: 0.5em;
+        margin: 10px 4px;
+    }
+
+    /*  Propiedades especiales */
+
+    .contenedor__imagen--dentro{
+        width: 70%;
+    }
+
+    .contenedor__imagen--dentro3{
+        width: 70%;
+    }
+
+    .orden_segundo{
+        order: 1;
+    }
+
+}
+
+
+/* Media para Tablets */
+@media screen and (min-width: 768px) and (max-width:1200px){
+    body{
+        font-size: 18px;
+    }
+
+    .head{
+        height: 70px;
+    }
+
+    .head__menu__element__anchor{
+        font-size: calc(.4em + 1vw);
+        padding: 17px 7px;
+        margin: 0px 5px;
+    }
+
+    .head__menu__element__anchor:hover{
+        padding: 17px 7px;
+        border-bottom: 5px solid rgb(177, 59, 59);
+        background-color: rgba(170, 170, 170, 0.507);
+        box-shadow: 0px 0px 50px 5px #aaa;
+    }
+
+    .content__welcome{
+        width: 60%;
+    }
+
+    .content__welcome_imagediv{
+        width: 90%;
+    }
+
+    .foot__menu__elemento{
+        font-size: 0.9em;
+    }
+}
